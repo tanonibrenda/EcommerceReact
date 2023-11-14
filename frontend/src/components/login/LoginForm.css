@@ -1,0 +1,24 @@
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .create-account-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}  
+#formIngresar{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}

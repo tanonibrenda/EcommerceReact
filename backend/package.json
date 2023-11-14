@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend de proyecto de final de curso",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanonibrenda/proyectoIncluyeme.git"
+  },
+  "author": "Brenda Tanoni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanonibrenda/proyectoIncluyeme/issues"
+  },
+  "homepage": "https://github.com/tanonibrenda/proyectoIncluyeme#readme",
+  "dependencies": {
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.6.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1"
+  }
+}

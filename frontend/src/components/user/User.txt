@@ -1,0 +1,21 @@
+// User.js
+import React from 'react';
+
+const User = ({ user }) => {
+  return (
+    <div>
+      <h2>Datos del Usuario</h2>
+      <p>ID: {user.idUser}</p>
+      <p>Nombre: {user.name}</p>
+      <p>Apellido: {user.lastname}</p>
+      <p>Email: {user.email}</p>
+      <p>Dirección: {user.direccion}</p>
+      <p>Barrio: {user.Barrio}</p>
+      <p>Municipio: {user.municipio}</p>
+      <p>Provincia: {user.provincia}</p>
+      <p>Teléfono: {user.telefono}</p>
+    </div>
+  );
+};
+
+export default User;

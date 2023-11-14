@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+.custom-link {
+  text-decoration: none !important; 
+}
+nav {
+    padding-top: 15px;
+    padding-bottom: 40px;
+    /* background-color: #000; */
+    color: #0a0909;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  nav > h2 {
+    position: relative;
+    left: 60;
+    
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  
+  

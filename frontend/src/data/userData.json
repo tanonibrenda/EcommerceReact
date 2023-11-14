@@ -1,0 +1,35 @@
+
+{
+    "users": [
+      { 
+        "idUser": "UsN-001",
+        "username": "usuario1",
+        "name":"myname",
+        "lastname":"mylastname",
+        "password": "1234",
+        "email":"usuario1@email.com",
+        "direccion":"calle 123",
+        "Barrio": "Barrio1", 
+        "municipio":"muni",
+        "provincia": "prov",
+        "telefono": "123456",
+        "avatar":"../../../../backend/storage/imgs/usuario1.jpeg"
+      },
+      {
+        "idUser": "UsN-002",
+        "username": "usuario2",
+        "name":"myname2",
+        "lastname":"mylastname2",
+        "password": "4321",
+        "email":"usuario2@email.com",
+        "direccion":"calle 123",
+        "Barrio": "Barrio1", 
+        "municipio":"muni",
+        "provincia": "prov",
+        "telefono": "123456",
+        "avatar":"../../../../backend/storage/imgs/usuario2.jpeg"
+      }
+      
+    ]
+  }
+  

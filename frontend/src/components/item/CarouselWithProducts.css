@@ -1,0 +1,24 @@
+/* CarouselWithProducts.css */
+Carousel{
+    border: 2px black;
+    border-radius: 40px;
+}
+
+img{
+    margin-bottom: 5px;
+    padding: auto;
+}
+#imgID{
+    margin: 5px;
+}
+.custom-carousel-caption {
+    text-align: center;
+  }
+  
+  .text-black {
+    color: black;
+  }
+
+  .Card.Body{
+    margin-top: 360px;
+  }

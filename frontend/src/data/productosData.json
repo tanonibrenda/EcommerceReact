@@ -1,0 +1,66 @@
+[
+  {
+      "id": 1,
+      "nombre": "Aspiradora Roja",
+      "precio": 19.99,
+      "categoria": "Electrodomésticos",
+      "imagen": "./images/imgProd/aspiradora01.jpeg",
+      "alt": "foto de una aspiradora roja"
+  },
+  {
+      "id": 2,
+      "nombre": "Aspiradora Azul",
+      "precio": 29.99,
+      "categoria":"Electrodomésticos",
+      "imagen": "./images/imgProd/aspiradora02.jpeg",
+      "alt": "foto de una aspiradora roja"
+  },
+  {
+      "id": 3,
+      "nombre": "Auricular l",
+      "precio": 29.99,
+      "categoria": "Electrónicos",
+      "imagen": "./images/imgProd/auricular01.jpeg",
+      "alt": "foto de una aspiradora roja"
+  },
+  {
+      "id": 4,
+      "nombre": "Sillón Negro",
+      "precio": 29.99,
+      "categoria": "Muebles",
+      "imagen": "./images/imgProd/sillon01.png",
+      "alt": "foto de una aspiradora roja"
+  },
+  {
+    "id": 5,
+    "nombre": "Cafetera",
+    "precio": 29.99,
+    "categoria": "Electrododomésticos",
+    "imagen": "./images/imgProd/cafetera01.jpeg",
+    "alt": "foto de una aspiradora roja"
+},
+{
+    "id": 6,
+    "nombre": "Aspiradora 3",
+    "precio": 29.99,
+    "categoria": "Electrododomésticos",
+    "imagen": "./images/imgProd/aspiradora03.jpg",
+    "alt": "foto de una aspiradora roja"
+},
+{
+    "id": 7,
+    "nombre": "Aspiradora 4",
+    "precio": 29.99,
+    "categoria": "Electrododomésticos",
+    "imagen": "./images/imgProd/aspiradora04.jpg",
+    "alt": "foto de una aspiradora roja"
+},
+{
+    "id": 8,
+    "nombre": "Aspiradora Robot 01",
+    "precio": 29.99,
+    "categoria": "Electrododomésticos",
+    "imagen": "./images/imgProd/aspiradorarobot01.jpeg",
+    "alt": "foto de una aspiradora roja"
+}
+]
