@@ -6,7 +6,7 @@ const usuarioSchema = new mongoose.Schema(
         name: { type: String, required: true },
         lastname: { type: String, required: true },
         username: { type: String, required: true },
-        password: Number,
+        password: { type: String, required: true },
         email: { type: String, required: true },
         direccion: String,
         Barrio: String,
@@ -19,17 +19,17 @@ const usuarioSchema = new mongoose.Schema(
         },
     },
     {
-        timestamps: true,
-        collection: 'proyectoIncluyeme'
+        
+        
         
     }
 );
 
-usuarioSchema.methods.setImagen = function setImagen(filename) {
-    const { host, port } = appConfig;
-    this.imagen = `${host}:${port}/public/${filename}`;
-}
+// usuarioSchema.methods.setImagen = function setImagen(filename) {
+//     const { host, port } = appConfig;
+//     this.imagen = `${host}:${port}/public/${filename}`;
+// }
 
-const Usuario = mongoose.model('Usuario', usuarioSchema, 'proyectoIncluyeme'); 
+const Usuario = mongoose.model('Usuario', usuarioSchema); 
 
 module.exports = Usuario;

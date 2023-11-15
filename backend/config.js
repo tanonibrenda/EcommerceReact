@@ -1,6 +1,7 @@
+// config.js
 const config = {
   appConfig: {
-    port: process.env.APP_PORT ||3001,
+    port: process.env.APP_PORT || 3001,
     host: process.env.APP_HOST || 'localhost',
   },
   dbConfig: {

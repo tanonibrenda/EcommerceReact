@@ -1,6 +1,5 @@
-//métodos del backend
+//métodos del backend index.js de carpeta services del front
 import axios from 'axios';
-
 
 const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 

@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-
-
-
-
 import { getUsers } from './index.js';
-
 import CrearUsuario from '../cruds/usuarios/crearUsuario.js';
 import ActUsuario from '../cruds/usuarios/actUsuario.js';
 import BorrarUsuarios from '../cruds/usuarios/borrarUsuario.js';
 
-export const AdmUsuarios = () => {
+
+const AdmUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
@@ -58,7 +54,6 @@ export const AdmUsuarios = () => {
             <ListGroup key={_id}>
               <ListGroup.Item>
                 <div>
-                  {/* Comentarios para explicar la sección de datos del usuario */}
                   <div>Tus Datos</div>
                   <h3>{username}</h3>
                   <h4>{name}</h4>
