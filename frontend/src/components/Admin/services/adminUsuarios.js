@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { getUsers } from './index.js';
+// import { getUsers } from './index.js';
+import { getUsuarios, findUsuario } from '../services';
 import CrearUsuario from '../cruds/usuarios/crearUsuario.js';
 import ActUsuario from '../cruds/usuarios/actUsuario.js';
 import BorrarUsuarios from '../cruds/usuarios/borrarUsuario.js';
+
 
 
 const AdmUsuarios = () => {
@@ -13,7 +15,7 @@ const AdmUsuarios = () => {
   useEffect(() => {
     async function cargaUsuarios() {
       try {
-        const response = await getUsers();
+        const response = await getUsuarios();
 
         if (response.status === 200) {
           setUsuarios(response.data.usuarios);
@@ -32,7 +34,8 @@ const AdmUsuarios = () => {
     <>
       <Container>
         <CrearUsuario />
-        <ActUsuario />
+        {/* <ActUsuario /> */}
+        <ActUsuario findUsuario={findUsuario} />
         <BorrarUsuarios />
       </Container>
 

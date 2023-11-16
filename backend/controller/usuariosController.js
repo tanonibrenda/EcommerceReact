@@ -1,7 +1,7 @@
 // traer usuarios
 const Usuario = require('../models/Usuarios');
 
-async function addUsuario(req, res){
+async function CrearUsuario(req, res){
     try{
         const {name, Lastname, username, password,  email, direccion, Barrio, municipio, provincia, telefono, idUser } = req.body;
 
@@ -55,7 +55,7 @@ async function findUsuarios (req, res){
     }
 }
 
-async function updateUsuario(req, res){
+async function ActUsuario(req, res){
     try{
         const usuarios = await Usuario.findByIdAndUpdate(req.params.id, req.body, {
             new: true
@@ -67,7 +67,7 @@ async function updateUsuario(req, res){
     }
 }
 
-async function deleteUsuarios(req, res){
+async function BorrarUsuarios(req, res){
     try{
         const usuarios = await Usuario.findByIdAndDelete(req.params.id);
         //si no se encuentra cursos
@@ -81,4 +81,4 @@ async function deleteUsuarios(req, res){
     }
 }
 
-module.exports = {addUsuario, getUsuarios, findUsuarios, updateUsuario, deleteUsuarios};
+module.exports = {CrearUsuario, getUsuarios, findUsuarios, ActUsuario, BorrarUsuarios};

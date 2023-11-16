@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getUsers, updateUsuario } from '../../services';
+import { getUsuarios, ActUsuario } from '../../services';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function ActUsuario() {
+
+
+function ActUsuarios() {
     const [usuarios, setUsuarios] = useState([]);
     const [usuarioSel, setUsuarioSel] = useState("");
     const [datosUsuario, setDatosUsuarios] = useState({});
@@ -12,7 +14,7 @@ function ActUsuario() {
 
     useEffect(() => {
         async function cargaUsuarios() {
-            const response = await getUsers();
+            const response = await getUsuarios();
 
             if (response.status === 200) {
                 setUsuarios(response.data.usuarios);
@@ -62,7 +64,7 @@ function ActUsuario() {
         const confirmActualizar = window.confirm(`¿Estás seguro que quieres actualizar tus datos?`);
 
         if (confirmActualizar) {
-            updateUsuario(usuarioSel, datosNuevos)
+            ActUsuario(usuarioSel, datosNuevos)
                 .then((response) => {
                     handleClose();
                     window.location.reload();
@@ -187,5 +189,5 @@ function ActUsuario() {
     );
 }
 
-export default ActUsuario;
+export default ActUsuarios;
 

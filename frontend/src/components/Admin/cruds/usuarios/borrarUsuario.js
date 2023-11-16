@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { getUsers, deleteUsuario } from '../../services/index';
+import { getUsuarios, BorrarUsuarios } from '../../services/index';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function BorrarUsuarios() {
+function BorrarUsuario() {
     const [usuarios, setUsuarios] = useState([]);
     const [usuarioSel, setUsuarioSel] = useState("");
 
     useEffect(() => {
         async function cargaUsuarios() {
             try {
-                const response = await getUsers();
+                const response = await getUsuarios();
 
                 if (response.status === 200) {
                     setUsuarios(response.data.usuarios);
@@ -36,7 +36,7 @@ function BorrarUsuarios() {
         const confirmDelete = window.confirm("¿Estás seguro que quieres eliminar esta cuenta de usuario?");
 
         if (confirmDelete) {
-            deleteUsuario(usuarioSel)
+            BorrarUsuarios(usuarioSel)
                 .then((response) => {
                     handleClose();
                     window.location.reload();
@@ -86,5 +86,5 @@ function BorrarUsuarios() {
     );
 }
 
-export default BorrarUsuarios;
+export default BorrarUsuario;
 

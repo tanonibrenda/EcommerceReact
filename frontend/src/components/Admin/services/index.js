@@ -3,9 +3,19 @@ import axios from 'axios';
 
 const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-export const getUsers = async (url) => {
+// export const getUsuarios = async (url) => {
+//   try {
+//     const response = await axios.get(`${baseUrl}${url}`);
+//     console.log('index de services de admin')
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error al obtener la data", error);
+//     throw error;
+//   }
+// };
+export const getUsuarios = async () => {
   try {
-    const response = await axios.get(`${baseUrl}${url}`);
+    const response = await axios.get(`${baseUrl}/usuarios`);
     console.log('index de services de admin')
     return response.data;
   } catch (error) {
@@ -14,6 +24,15 @@ export const getUsers = async (url) => {
   }
 };
 
+export const findUsuario = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/usuarios/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener la data", error);
+    throw error;
+  }
+};
 export async function saveUsuario(usuarioData) {
   const formData = new FormData();
   formData.append("usuario", usuarioData.username);
@@ -43,7 +62,7 @@ export async function saveUsuario(usuarioData) {
   }
 }
 
-export async function updateUsuario(_id, datosNuevo) {
+export async function ActUsuario(_id, datosNuevo) {
   try {
     const response = await axios({
       url: `${baseUrl}/usuarios/${_id}`,
@@ -57,7 +76,7 @@ export async function updateUsuario(_id, datosNuevo) {
   }
 }
 
-export async function deleteUsuario(_id) {
+export async function BorrarUsuarios(_id) {
   try {
     const response = await axios({
       url: `${baseUrl}/usuarios/${_id}`,
