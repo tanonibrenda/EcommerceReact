@@ -10,4 +10,6 @@ api.get('/usuarios/:id', findUsuarios);
 api.put('/usuarios/:id', upload.single('imagen'), updateUsuario);
 api.delete('/usuarios/:id', deleteUsuarios);
 
+
+console.log('usuarios.js de routes')
 module.exports = api;

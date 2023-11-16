@@ -5,11 +5,13 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { appConfig } = require('./config.js');
-require('./conexion.js');
-const mongoose = require('mongoose');
+const mongoose = require('./db/mongodb');
 const debug = require('debug')('backend');
 mongoose.set('debug', true);
 const usuariosRoutes = require('./routes/usuarios.js');
+
+// Conectar a la base de datos
+mongoose.connectDb();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,7 +23,7 @@ app.use(session({
   resave: false,
   cookie: { expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
   saveUninitialized: false,
-}))
+}));
 
 app.use('/v1', usuariosRoutes);
 
