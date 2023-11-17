@@ -14,3 +14,5 @@ const config = {
 console.log("Configuración:", config);
 
 module.exports = config;
+
+//se debe llamar en app.js del backend

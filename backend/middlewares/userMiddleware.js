@@ -1,8 +1,14 @@
 // userMiddleware.js
-const axios = require('axios');
+const { Usuario } = require('../models/Usuarios');
 
 const userMiddleware = async (userData) => {
   try {
+    // Asegúrate de que 'userData' no sea 'undefined' ni 'null'
+    //  if (!userData.username || !userData.email) {
+    //   throw new Error('El nombre de usuario y el correo electrónico son obligatorios.');
+    // }
+
+    // Asegúrate de que 'userData.username' y 'userData.email' estén presentes
     if (!userData.username || !userData.email) {
       throw new Error('El nombre de usuario y el correo electrónico son obligatorios.');
     }
@@ -11,11 +17,30 @@ const userMiddleware = async (userData) => {
       throw new Error('La contraseña debe tener al menos 4 caracteres.');
     }
 
-    // Luego, realizar la solicitud a la API o guardar en la base de datos
-    const response = await axios.post('http://api.example.com/users', userData);
-    // o realiza la operación de guardado en la base de datos aquí
+    // Crear una instancia del modelo Usuario
+    const nuevoUsuario = new Usuario({
+      name: userData.name,
+      Lastname: userData.Lastname,
+      username: userData.username,
+      password: userData.password,
+      email: userData.email,
+      direccion: userData.direccion,
+      Barrio: userData.barrio,
+      municipio: userData.municipio,
+      provincia: userData.provincia,
+      telefono: userData.telefono,
+      idUser: userData.idUser,
+    });
 
-    return response.data;
+    // Verificar si userData tiene una propiedad 'imagen'
+    // if (userData.imagen) {
+    //   nuevoUsuario.setImagen(userData.imagen);
+    // }
+
+    // Guardar el usuario en la base de datos
+    await nuevoUsuario.save();
+
+    return nuevoUsuario;
   } catch (error) {
     console.error('Error en el middleware:', error);
     throw error;

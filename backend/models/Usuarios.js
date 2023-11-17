@@ -12,7 +12,7 @@ const usuarioSchema = new mongoose.Schema(
         Barrio: String,
         municipio: String,
         provincia: String,
-        telefono: Number,
+        telefono: String,
         _id: {
             type: String,
             default: () => mongoose.Types.ObjectId().toString(),

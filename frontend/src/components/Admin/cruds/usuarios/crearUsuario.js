@@ -33,11 +33,13 @@ function CrearUsuario({ onUsuarioCreado }) {
     try {
       const usuarioData = { ...formData };
       const response = await saveUsuario(usuarioData);
-      onUsuarioCreado(response.usuario); // Actualizar el estado local de los usuarios
+      // Actualizar el estado local de los usuarios
+      onUsuarioCreado(response.usuario); 
       handleClose();
     } catch (error) {
-      console.error('Error al crear usuario:', error);
       // Manejar el error y mostrar mensajes al usuario si es necesario
+      console.error('Error al crear usuario:', error);
+      
     }
   };
 
