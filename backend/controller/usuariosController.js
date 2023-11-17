@@ -1,13 +1,12 @@
-// traer usuarios
 const Usuario = require('../models/Usuarios');
 
 async function CrearUsuario(req, res) {
     try {
-        const { name, Lastname, username, password, email, direccion, Barrio, municipio, provincia, telefono, idUser } = req.body;
+        const { name,Lastname, username, password, email, direccion, barrio, municipio, provincia, telefono, idUser } = req.body;
 
-        const usuario = Usuario({
+        const usuario = new Usuario({
             name,
-            Lastname: lastname,
+            Lastname,
             username,
             password,
             email,
@@ -32,8 +31,6 @@ async function CrearUsuario(req, res) {
         res.status(500).send({ message: "Error interno del servidor al crear usuario" });
     }
 }
-
-
 async function getUsuarios(req, res) {
     try{
         //obtener los usuarios de la bdd
@@ -73,7 +70,7 @@ async function BorrarUsuarios(req, res){
     try{
         const usuarios = await Usuario.findByIdAndDelete(req.params.id);
         //si no se encuentra cursos
-        if(!curso){
+        if(!usuarios){
             return res.status(404).send({ message: 'Usuario no encontrado' });
         }
         res.status(200).send({message: 'Usuario eliminado exitosamente'});

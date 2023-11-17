@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const LoginController = require('../controllers/LoginController');
-const axios = require('axios');
+const { userMiddleware } = require('../../../backend/middlewares/userMiddleware');
 
 // Obtener todos los usuarios
 router.get('/', LoginController.getAllUsers);
@@ -12,9 +12,10 @@ router.get('/:id', LoginController.getUserById);
 // Crear un nuevo usuario
 router.post('/', async (req, res) => {
   try {
-    const userData = req.body; // Obtener datos del cuerpo de la solicitud
-    const response = await axios.post('http://localhost:3001/users', userData);
-    res.status(response.status).json(response.data);
+    const userData = req.body; 
+    console.log('Cuerpo de la solicitud:', req.body);
+    const responseData = await userMiddleware(userData); 
+    res.status(201).json(responseData);
   } catch (error) {
     console.error("Error al crear usuario:", error);
     res.status(500).send('Error interno del servidor');
@@ -28,3 +29,4 @@ router.put('/:id', LoginController.updateUser);
 router.delete('/:id', LoginController.deleteUser);
 
 module.exports = router;
+

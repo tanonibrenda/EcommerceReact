@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const { appConfig } = require('../config');
+// const {appConfig} = require('../config');
 
 const usuarioSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
-        lastname: { type: String, required: true },
+        Lastname: { type: String, required: true },
         username: { type: String, required: true },
         password: { type: String, required: true },
         email: { type: String, required: true },
@@ -25,10 +25,7 @@ const usuarioSchema = new mongoose.Schema(
     }
 );
 
-// usuarioSchema.methods.setImagen = function setImagen(filename) {
-//     const { host, port } = appConfig;
-//     this.imagen = `${host}:${port}/public/${filename}`;
-// }
+
 
 const Usuario = mongoose.model('Usuario', usuarioSchema); 
 

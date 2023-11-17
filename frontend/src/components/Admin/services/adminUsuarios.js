@@ -20,7 +20,8 @@ const AdmUsuarios = () => {
         if (response.status === 200) {
           setUsuarios(response.data.usuarios);
         } else {
-          console.error('Error al cargar usuarios:', response.statusText);
+          console.error('Error al cargar usuarios. Detalles de la respuesta:', response); 
+          // response.statusText);
         }
       } catch (error) {
         console.error('Error en la solicitud:', error.message);
