@@ -7,14 +7,14 @@ api.get('/usuarios', getUsuarios);
 
 // Ruta para agregar un usuario
 api.post('/usuarios', async (req, res) => {
-  try {
-    const nuevoUsuario = await CrearUsuario(req.body); 
-    res.json(nuevoUsuario);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error al agregar el usuario' });
-  }
-});
+    try {
+      const nuevoUsuario = await CrearUsuario(req.body); 
+      res.json(nuevoUsuario);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error al agregar el usuario' });
+    }
+  });
 
 api.get('/usuarios/:id', findUsuarios);
 

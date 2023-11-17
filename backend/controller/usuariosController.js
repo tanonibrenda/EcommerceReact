@@ -1,36 +1,38 @@
 // traer usuarios
 const Usuario = require('../models/Usuarios');
 
-async function CrearUsuario(req, res){
-    try{
-        const {name, Lastname, username, password,  email, direccion, Barrio, municipio, provincia, telefono, idUser } = req.body;
+async function CrearUsuario(req, res) {
+    try {
+        const { name, Lastname, username, password, email, direccion, Barrio, municipio, provincia, telefono, idUser } = req.body;
 
         const usuario = Usuario({
-            name, 
-            Lastname,
+            name,
+            Lastname: lastname,
             username,
             password,
             email,
             direccion,
-            Barrio,
+            Barrio: barrio,
             municipio,
             provincia,
             telefono,
             idUser
         });
-        // para la imagen
-        if(req.file){
+
+        // Verificar si req.file existe y si tiene una propiedad 'filename'
+        if (req.file && req.file.filename) {
             const { filename } = req.file;
             usuario.setImagen(filename);
         }
 
-        const usuarios = await usuario.save();
-        res.status(201).send({ usuarios })
-    }
-    catch (e) {
-        res.status(500).send({message: e.message})
+        const nuevoUsuario = await usuario.save();
+        res.status(201).send({ usuario: nuevoUsuario }); // Enviar el nuevo usuario creado en la respuesta
+    } catch (e) {
+        console.error("Error al crear usuario:", e.message);
+        res.status(500).send({ message: "Error interno del servidor al crear usuario" });
     }
 }
+
 
 async function getUsuarios(req, res) {
     try{

@@ -33,24 +33,35 @@ function CrearUsuario() {
             const usuarioData = {
                 username,
                 name,
-                lastname,
+                Lastname: lastname,
                 password,
                 email,
                 direccion,
-                barrio,
+                Barrio: barrio,
                 municipio,
                 provincia,
                 telefono
                 // avatar: inputFileRef.current.files[0],
             };
+            console.log(usuarioData);
     
             saveUsuario(usuarioData)
                 .then(() => {
                     handleClose();
                     window.location.reload();
+                    console.log('saveUsuario')
                 })
                 .catch((error) => {
                     console.error("Error al crear usuario:", error);
+                
+
+                if (error.response && error.response.data) {
+                    
+                    alert(`Error al crear usuario: ${error.response.data.message}`);
+                } else {
+                    // De lo contrario, muestra un mensaje genérico de error
+                    alert("Error al crear usuario. Por favor, inténtelo de nuevo.");
+                }
                 });
         } 
 
@@ -81,8 +92,8 @@ function CrearUsuario() {
                         </Row>
                        
                         <Row className="mb-3">
-                            <Form.Group as={Col} controlId="lastname"><Form.Label>Apellido</Form.Label>
-                            <Form.Control placeholder="Ingrese su Apellido" name='lastname' onChange={(event) => { setLastname(event.target.value) }} />
+                            <Form.Group as={Col} controlId="Lastname"><Form.Label>Apellido</Form.Label>
+                            <Form.Control placeholder="Ingrese su Apellido" name='Lastname' onChange={(event) => { setLastname(event.target.value) }} />
                             </Form.Group>
                             </Row>
                        
