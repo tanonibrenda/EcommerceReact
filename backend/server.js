@@ -12,10 +12,10 @@ async function initApp() {
     try {
         await connectDb(dbConfig);
         app.listen(
-            // appConfig.port, 
-            3002,
+            appConfig.port, 
+            // 3002,
             () => {
-            console.log(`Server running on port 3002 from server.js`);
+            console.log(`Server running on port ${config.appConfig.port} from server.js`);
         });
     } catch (error) {
         console.error('Error starting the server:', error);
