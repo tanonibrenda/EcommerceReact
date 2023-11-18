@@ -33,7 +33,7 @@ function CrearUsuario({ onUsuarioCreado }) {
     try {
      
       const response = await saveUsuario({ ...formData, username: formData.username.toLowerCase() });
-
+      console.log("Usuario guardado con éxito:", response);
       // Actualizar el estado local de los usuarios
       onUsuarioCreado(response.usuario); 
       handleClose();

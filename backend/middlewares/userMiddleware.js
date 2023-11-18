@@ -13,7 +13,7 @@ const userMiddleware = async (userData) => {
     console.log(req.body);
     const nuevoUsuario = new Usuario({
       name: userData.name,
-      Lastname: userData.Lastname,
+      lastname: userData.lastname,
       username: userData.username,
       password: userData.password,
       email: userData.email,

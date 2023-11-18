@@ -29,7 +29,6 @@ export async function saveUsuario(usuarioData) {
   formData.append("usuario", usuarioData.username);
   formData.append("nombre", usuarioData.name);
   formData.append("apellido", usuarioData.lastname);
-
   formData.append("password", usuarioData.password);
   formData.append("email", usuarioData.email);
   formData.append("direccion", usuarioData.direccion);

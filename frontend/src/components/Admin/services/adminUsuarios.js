@@ -1,49 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-// import { getUsers } from './index.js';
-import { getUsuarios, findUsuario } from '../services';
+import { getUsuarios, findUsuario, saveUsuario, ActUsuario, BorrarUsuarios } from '../services';  // Importo todas las funciones necesarias
 import CrearUsuario from '../cruds/usuarios/crearUsuario.js';
-import ActUsuario from '../cruds/usuarios/actUsuario.js';
-import BorrarUsuarios from '../cruds/usuarios/borrarUsuario.js';
-
-
 
 const AdmUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    async function cargaUsuarios() {
+    async function cargarUsuarios() {
       try {
         const response = await getUsuarios();
-
-        if (response.status === 200) {
-          setUsuarios(response.data.usuarios);
-        } else {
-          console.error('Error al cargar usuarios. Detalles de la respuesta:', response); 
-          // response.statusText);
-        }
+        setUsuarios(response);
       } catch (error) {
         console.error('Error en la solicitud:', error.message);
       }
     }
 
-    cargaUsuarios();
+    cargarUsuarios();
   }, []);
 
   return (
     <>
       <Container>
-        <CrearUsuario />
-        <ActUsuario findUsuario={findUsuario} />
-        <BorrarUsuarios />
+        <CrearUsuario saveUsuario={saveUsuario} />
+        {/* ^^^ Pasando la función saveUsuario como prop */}
+        <ActUsuario findUsuario={findUsuario} ActUsuario={ActUsuario} />
+        {/* ^^^ Pasando las funciones findUsuario y ActUsuario como props */}
+        <BorrarUsuarios BorrarUsuarios={BorrarUsuarios} />
+        {/* ^^^ Pasando la función BorrarUsuarios como prop */}
       </Container>
 
       <Container>
-      {usuarios.map(({ _id, username, name, lastname, password, email, direccion, barrio, municipio, provincia, telefono }) => (
-    <ListGroup key={_id}>
-        <ListGroup.Item>
-            <div>
+        {usuarios.map(({ _id, username, name, lastname, password, email, direccion, barrio, municipio, provincia, telefono }) => (
+          <ListGroup key={_id}>
+            <ListGroup.Item>
+              <div>
                 <div>Tus Datos</div>
                 <h3>{username}</h3>
                 <h4>{name}</h4>
@@ -54,10 +46,10 @@ const AdmUsuarios = () => {
                 <h4>{municipio}</h4>
                 <h4>{provincia}</h4>
                 <h4>{telefono}</h4>
-            </div>
-        </ListGroup.Item>
-    </ListGroup>
-))}
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+        ))}
       </Container>
     </>
   );

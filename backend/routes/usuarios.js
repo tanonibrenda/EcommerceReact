@@ -16,6 +16,7 @@ api.post('/usuarios', async (req, res) => {
     }
   });
 
+// Obtener un usuario por ID
 api.get('/usuarios/:id', findUsuarios);
 
 // Ruta para actualizar un usuario
