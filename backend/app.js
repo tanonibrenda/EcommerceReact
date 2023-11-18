@@ -18,7 +18,9 @@ app.use(cors());
 
 app.use('/v1', usuariosRoutes);
 
-const port = appConfig.port || 3000;
+initApp();
+
+const port = appConfig.port ;
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

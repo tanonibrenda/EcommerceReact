@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import AdmUsuarios from './adminUsuarios';
 
 function Admin(){
-    const [key, setKey] = useState('cursos');
+    const [key, setKey] = useState('usuarios');
 
     return(
         <Container>

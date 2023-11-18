@@ -35,44 +35,29 @@ const AdmUsuarios = () => {
     <>
       <Container>
         <CrearUsuario />
-        {/* <ActUsuario /> */}
         <ActUsuario findUsuario={findUsuario} />
         <BorrarUsuarios />
       </Container>
 
       <Container>
-        {usuarios.map(
-          ({
-            _id,
-            username,
-            name,
-            lastname,
-            password,
-            email,
-            direccion,
-            barrio,
-            municipio,
-            provincia,
-            telefono,
-          }) => (
-            <ListGroup key={_id}>
-              <ListGroup.Item>
-                <div>
-                  <div>Tus Datos</div>
-                  <h3>{username}</h3>
-                  <h4>{name}</h4>
-                  <h4>{lastname}</h4>
-                  <h4>{email}</h4>
-                  <h4>{direccion}</h4>
-                  <h4>{barrio}</h4>
-                  <h4>{municipio}</h4>
-                  <h4>{provincia}</h4>
-                  <h4>{telefono}</h4>
-                </div>
-              </ListGroup.Item>
-            </ListGroup>
-          )
-        )}
+      {usuarios.map(({ _id, username, name, lastname, password, email, direccion, barrio, municipio, provincia, telefono }) => (
+    <ListGroup key={_id}>
+        <ListGroup.Item>
+            <div>
+                <div>Tus Datos</div>
+                <h3>{username}</h3>
+                <h4>{name}</h4>
+                <h4>{lastname}</h4>
+                <h4>{email}</h4>
+                <h4>{direccion}</h4>
+                <h4>{barrio}</h4>
+                <h4>{municipio}</h4>
+                <h4>{provincia}</h4>
+                <h4>{telefono}</h4>
+            </div>
+        </ListGroup.Item>
+    </ListGroup>
+))}
       </Container>
     </>
   );

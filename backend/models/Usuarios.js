@@ -17,12 +17,8 @@ const usuarioSchema = new mongoose.Schema(
             type: String,
             default: () => mongoose.Types.ObjectId().toString(),
         },
-    },
-    {
-        
-        
-        
     }
+    
 );
 
 

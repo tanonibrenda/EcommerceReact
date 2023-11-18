@@ -55,7 +55,7 @@ const NavBar = () => {
             </Nav.Link>
             
             
-            <Nav.Link as={Link} to="/admin/crearUsuario">Crear Usuario</Nav.Link>
+            {/* <Nav.Link as={Link} to="/admin/crearUsuario">Crear Usuario</Nav.Link> */}
             
             <Nav.Link as={Link} to="/admin">Usuarios</Nav.Link>
             

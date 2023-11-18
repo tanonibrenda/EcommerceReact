@@ -2,7 +2,7 @@ const { Usuario } = require('../models/Usuarios');
 
 const userMiddleware = async (userData) => {
   try {
-    if (!userData.username || !userData.email || !userData.password) {
+    if (!userData || !userData.username || !userData.email || !userData.password) {
       throw new Error('El nombre de usuario, el correo electrónico y la contraseña son obligatorios.');
     }
 
@@ -10,6 +10,7 @@ const userMiddleware = async (userData) => {
       throw new Error('La contraseña debe tener al menos 4 caracteres.');
     }
 
+    console.log(req.body);
     const nuevoUsuario = new Usuario({
       name: userData.name,
       Lastname: userData.Lastname,
@@ -24,10 +25,7 @@ const userMiddleware = async (userData) => {
       idUser: userData.idUser,
     });
 
-    // Verificar si 'userData' tiene una propiedad 'imagen'
-    if (userData.imagen) {
-      nuevoUsuario.setImagen(userData.imagen);
-    }
+    
 
     // Guardar el usuario en la base de datos y devolverlo
     const savedUser = await nuevoUsuario.save();
@@ -39,4 +37,3 @@ const userMiddleware = async (userData) => {
 };
 
 module.exports = { userMiddleware };
-

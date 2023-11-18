@@ -31,8 +31,9 @@ function CrearUsuario({ onUsuarioCreado }) {
 
   const handleSubmit = async () => {
     try {
-      const usuarioData = { ...formData };
-      const response = await saveUsuario(usuarioData);
+     
+      const response = await saveUsuario({ ...formData, username: formData.username.toLowerCase() });
+
       // Actualizar el estado local de los usuarios
       onUsuarioCreado(response.usuario); 
       handleClose();

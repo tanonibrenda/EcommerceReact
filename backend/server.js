@@ -11,8 +11,11 @@ app.use(cors());
 async function initApp() {
     try {
         await connectDb(dbConfig);
-        app.listen(appConfig.port, () => {
-            console.log(`Server running on port ${appConfig.port} from server.js`);
+        app.listen(
+            // appConfig.port, 
+            3002,
+            () => {
+            console.log(`Server running on port 3002 from server.js`);
         });
     } catch (error) {
         console.error('Error starting the server:', error);
@@ -20,6 +23,5 @@ async function initApp() {
     }
 }
 
-// initApp();
 
 module.exports = { initApp };

@@ -29,14 +29,15 @@ export async function saveUsuario(usuarioData) {
   formData.append("usuario", usuarioData.username);
   formData.append("nombre", usuarioData.name);
   formData.append("apellido", usuarioData.lastname);
-  formData.append("contraseña", usuarioData.password);
+
+  formData.append("password", usuarioData.password);
   formData.append("email", usuarioData.email);
   formData.append("direccion", usuarioData.direccion);
-  formData.append("Barrio", usuarioData.Barrio);
+  formData.append("barrio", usuarioData.barrio);
   formData.append("municipio", usuarioData.municipio);
   formData.append("provincia", usuarioData.provincia);
   formData.append("telefono", usuarioData.telefono);
-  formData.append("avatar", usuarioData.avatar);
+ 
 
   try {
     const response = await axios({
