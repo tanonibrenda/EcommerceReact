@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getUsuarios, ActUsuario } from '../../services';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -24,7 +24,7 @@ function ActUsuarios() {
     }, []);
 
     const handleSelUsuario = (event) => {
-        const selectedUsuario = usuarios.find((usuario) => usuario._id === event.target.value);
+        const selectedUsuario = usuarios.find((usuario) => usuario.idUser === event.target.value);
         setUsuarioSel(event.target.value);
         setDatosUsuarios(selectedUsuario);
     };
@@ -32,7 +32,7 @@ function ActUsuarios() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const inputFileRef = useRef();
+    // const inputFileRef = useRef();
 
     const handleSubmit = () => {
         const newUsername = datosUsuario.username;
@@ -45,9 +45,10 @@ function ActUsuarios() {
         const newMunicipio = datosUsuario.municipio;
         const newProvincia = datosUsuario.provincia;
         const newTelefono = datosUsuario.telefono;
-        const newAvatar = inputFileRef.current?.files[0];
+        // const newAvatar = inputFileRef.current?.files[0];
 
         const datosNuevos = {
+            idUser: usuarioSel,
             username: newUsername,
             name: newName,
             lastname: newLastname,
@@ -58,8 +59,9 @@ function ActUsuarios() {
             municipio: newMunicipio,
             provincia: newProvincia,
             telefono: newTelefono,
-            avatar: newAvatar,
-        };
+            
+          };
+          
 
         const confirmActualizar = window.confirm(`¿Estás seguro que quieres actualizar tus datos?`);
 
@@ -91,7 +93,7 @@ function ActUsuarios() {
                             <Form.Select value={usuarioSel} onChange={handleSelUsuario}>
                                 <option>Seleccionar usuario</option>
                                 {usuarios.map((usuario) => (
-                                    <option key={usuario._id} value={usuario._id}>
+                                    <option key={usuario.idUser} value={usuario.idUser}>
                                         {usuario.name} - {usuario.lastname} - {usuario.username} - {usuario.email}
                                     </option>
                                 ))}

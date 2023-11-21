@@ -1,7 +1,8 @@
 //métodos del backend index.js de carpeta services del front
 import axios from 'axios';
 
-const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3002";
+
 
 
 export const getUsuarios = async () => {
@@ -15,9 +16,9 @@ export const getUsuarios = async () => {
   }
 };
 
-export const findUsuario = async (id) => {
+export const findUsuario = async (idUser) => {
   try {
-    const response = await axios.get(`${baseUrl}/usuarios/${id}`);
+    const response = await axios.get(`${baseUrl}/usuarios/${idUser}`);
     return response.data;
   } catch (error) {
     console.error("Error al obtener la data", error);
@@ -36,7 +37,6 @@ export async function saveUsuario(usuarioData) {
   formData.append("municipio", usuarioData.municipio);
   formData.append("provincia", usuarioData.provincia);
   formData.append("telefono", usuarioData.telefono);
- 
 
   try {
     const response = await axios({
@@ -45,18 +45,18 @@ export async function saveUsuario(usuarioData) {
       data: formData
     });
     console.log("Usuario guardado con éxito:", response.data);
-    return response.data;
+    return response.data;  // Asegúrate de que response.data contenga la información necesaria
   } catch (e) {
     console.log(e);
-    // console.error("Error al guardar el usuario:", error);
-    // throw error;
+    throw e;
   }
 }
 
-export async function ActUsuario(_id, datosNuevo) {
+
+export async function ActUsuario(idUser, datosNuevo) {
   try {
     const response = await axios({
-      url: `${baseUrl}/usuarios/${_id}`,
+      url: `${baseUrl}/usuarios/${idUser}`,
       method: "PUT",
       data: datosNuevo
     });
@@ -67,15 +67,18 @@ export async function ActUsuario(_id, datosNuevo) {
   }
 }
 
-export async function BorrarUsuarios(_id) {
+export async function BorrarUsuarios(idUser) {
+  console.log('idUser en BorrarUsuarios:', idUser);
   try {
     const response = await axios({
-      url: `${baseUrl}/usuarios/${_id}`,
+      
+      url: `${baseUrl}/usuarios/${encodeURIComponent(idUser)}`,
+
       method: "DELETE"
     });
     console.log("Usuario borrado con éxito:", response.data);
     return response;
   } catch (e) {
-    console.log(e);
+    console.log('Error al borrar usuario:', e);
   }
 }

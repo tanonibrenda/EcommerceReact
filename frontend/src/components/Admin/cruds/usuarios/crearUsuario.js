@@ -12,7 +12,6 @@ function CrearUsuario({ onUsuarioCreado }) {
   const handleShow = () => setShow(true);
 
   const [formData, setFormData] = useState({
-    username: '',
     name: '',
     lastname: '',
     password: '',
@@ -31,8 +30,7 @@ function CrearUsuario({ onUsuarioCreado }) {
 
   const handleSubmit = async () => {
     try {
-     
-      const response = await saveUsuario({ ...formData, username: formData.username.toLowerCase() });
+      const response = await saveUsuario({ ...formData });
       console.log("Usuario guardado con éxito:", response);
       // Actualizar el estado local de los usuarios
       onUsuarioCreado(response.usuario); 
@@ -40,7 +38,6 @@ function CrearUsuario({ onUsuarioCreado }) {
     } catch (error) {
       // Manejar el error y mostrar mensajes al usuario si es necesario
       console.error('Error al crear usuario:', error);
-      
     }
   };
 
@@ -57,17 +54,6 @@ function CrearUsuario({ onUsuarioCreado }) {
         <Modal.Body>
           <Form>
             <Row className="mb-3">
-              <Form.Group as={Col} controlId="username">
-                <Form.Label>Usuario</Form.Label>
-                <Form.Control
-                  placeholder="Elija un nombre de Usuario"
-                  name='username'
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            </Row>
-
-            <Row className="mb-3">
               <Form.Group as={Col} controlId="name">
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control placeholder="Ingrese su Nombre" name='name' onChange={handleChange} />
@@ -77,7 +63,7 @@ function CrearUsuario({ onUsuarioCreado }) {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="Lastname">
                 <Form.Label>Apellido</Form.Label>
-                <Form.Control placeholder="Ingrese su Apellido" name='Lastname' onChange={handleChange} />
+                <Form.Control placeholder="Ingrese su Apellido" name='lastname' onChange={handleChange} />
               </Form.Group>
             </Row>
 

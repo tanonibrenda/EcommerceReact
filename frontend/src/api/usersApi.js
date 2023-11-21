@@ -7,7 +7,7 @@ const { userMiddleware } = require('../../../backend/middlewares/userMiddleware'
 router.get('/', LoginController.getAllUsers);
 
 // Obtener un usuario por ID
-router.get('/:id', LoginController.getUserById);
+router.get('/:idUser', LoginController.getUserById);
 
 // Crear un nuevo usuario
 router.post('/', async (req, res) => {
@@ -23,10 +23,10 @@ router.post('/', async (req, res) => {
 });
 
 // Actualizar un usuario por ID
-router.put('/:id', LoginController.updateUser);
+router.put('/:idUser', LoginController.updateUser);
 
 // Borrar un usuario por ID
-router.delete('/:id', LoginController.deleteUser);
+router.delete('/:idUser', LoginController.deleteUser);
 
 module.exports = router;
 

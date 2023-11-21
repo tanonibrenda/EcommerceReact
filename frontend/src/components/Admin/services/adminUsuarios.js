@@ -32,8 +32,8 @@ const AdmUsuarios = () => {
       </Container>
 
       <Container>
-        {usuarios.map(({ _id, username, name, lastname, password, email, direccion, barrio, municipio, provincia, telefono }) => (
-          <ListGroup key={_id}>
+        {usuarios.map(({ idUser, username, name, lastname, password, email, direccion, barrio, municipio, provincia, telefono }) => (
+          <ListGroup key={idUser}>
             <ListGroup.Item>
               <div>
                 <div>Tus Datos</div>

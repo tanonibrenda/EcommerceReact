@@ -36,6 +36,7 @@ function BorrarUsuario() {
         const confirmDelete = window.confirm("¿Estás seguro que quieres eliminar esta cuenta de usuario?");
 
         if (confirmDelete) {
+            console.log('usuarioSel:', usuarioSel);
             BorrarUsuarios(usuarioSel)
                 .then((response) => {
                     handleClose();
@@ -64,7 +65,7 @@ function BorrarUsuario() {
                             <Form.Select value={usuarioSel} onChange={handleSelUsuario}>
                                 <option>Seleccionar Usuario</option>
                                 {usuarios.map((usuario) => (
-                                    <option key={usuario._id} value={usuario._id}>
+                                    <option key={usuario.idUser} value={usuario.idUser}>
                                         {usuario.name} - {usuario.lastname} - {usuario.password} - {usuario.email}
                                     </option>
                                 ))}

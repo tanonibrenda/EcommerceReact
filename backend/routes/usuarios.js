@@ -17,20 +17,27 @@ api.post('/usuarios', async (req, res) => {
   });
 
 // Obtener un usuario por ID
-api.get('/usuarios/:id', findUsuarios);
+api.get('/usuarios/:idUser', findUsuarios);
 
-// Ruta para actualizar un usuario
-api.put('/usuarios/:id', async (req, res) => {
+//ruta para actualizar un usuario
+
+api.put('/usuarios/:idUser', async (req, res) => {
   try {
-    const usuarioActualizado = await  ActUsuario(req.params.id, req.body); 
-    res.json(usuarioActualizado);
+    const usuarioActualizado = await ActUsuario(req, res); // Pasar req y res
+    if (!res.headersSent) {
+      res.json(usuarioActualizado);
+    }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Error al actualizar el usuario' });
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'Error al actualizar el usuario' });
+    }
   }
 });
 
-api.delete('/usuarios/:id', BorrarUsuarios);
+
+//ruta para borrar usuario
+api.delete('/usuarios/:idUser', BorrarUsuarios);
 
 console.log('usuarios.js de routes');
 module.exports = api;

@@ -2,19 +2,18 @@ const { Usuario } = require('../models/Usuarios');
 
 const userMiddleware = async (userData) => {
   try {
-    if (!userData || !userData.username || !userData.email || !userData.password) {
-      throw new Error('El nombre de usuario, el correo electrónico y la contraseña son obligatorios.');
+    // Verifica que al menos uno de los campos (username, email, password) esté presente
+    if (!userData.email && !userData.password) {
+      throw new Error("Debes proporcionar al menos uno de los campos obligatorios: username, email, password");
     }
 
     if (userData.password.length < 4) {
       throw new Error('La contraseña debe tener al menos 4 caracteres.');
     }
 
-    console.log(req.body);
     const nuevoUsuario = new Usuario({
-      name: userData.name,
-      lastname: userData.lastname,
-      username: userData.username,
+      nombre: userData.name,
+      apellido: userData.lastname,
       password: userData.password,
       email: userData.email,
       direccion: userData.direccion,
@@ -22,10 +21,7 @@ const userMiddleware = async (userData) => {
       municipio: userData.municipio,
       provincia: userData.provincia,
       telefono: userData.telefono,
-      idUser: userData.idUser,
     });
-
-    
 
     // Guardar el usuario en la base de datos y devolverlo
     const savedUser = await nuevoUsuario.save();
