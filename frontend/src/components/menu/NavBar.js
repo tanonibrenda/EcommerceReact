@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/ShoppingCartContext';
 import indexApi from '../../api/indexApi';
-// import Admin from '../Admin/services/admin'
 
 
 const NavBar = () => {
@@ -53,13 +52,9 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/login" className="custom-link">
               Registrarse
             </Nav.Link>
+                            
+            <Nav.Link as={Link} to="/crud">Usuarios</Nav.Link>
             
-            
-            {/* <Nav.Link as={Link} to="/admin/crearUsuario">Crear Usuario</Nav.Link> */}
-            
-            <Nav.Link as={Link} to="/admin">Usuarios</Nav.Link>
-            
-
             <Nav.Link as={Link} to="/contacto" className="custom-link">
               Contacto
             </Nav.Link>

@@ -21,6 +21,8 @@ import  CrearUsuario from '../components/Admin/cruds/usuarios/crearUsuario'
 
 import Admin from '../components/Admin/services/admin';
 
+import Crud from '../components/crud/Crud'
+
 
 
 import Consejos from '../components/consejos/Consejos';
@@ -62,6 +64,7 @@ function App() {
             <Route path="/productos" element={<Productos />} />
             <Route path="/contacto" element={<Contacto/>} />
             <Route path="/usuarios" component={Usuarios} />
+            <Route path="/crud" element={<Crud />} />
             
             
             <Route path='/admin/crearUsuario' element={<CrearUsuario />} />

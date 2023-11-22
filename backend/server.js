@@ -1,28 +1,28 @@
-require('dotenv').config();
 const express = require('express');
-const { appConfig, dbConfig } = require('./config');
-const mongoose = require('./db/mongodb');
-const connectDb = mongoose.connectDb;
+const mongoose = require('mongoose');
+require("dotenv").config();
 const cors = require('cors');
-
 const app = express();
+const router = require('./routes/crudRoute');
+
+const PORT = process.env.PORT || 5000;
+
+app.use(express.json());
 app.use(cors());
 
-async function initApp() {
-    try {
-        await connectDb(dbConfig);
-        app.listen(
-            // appConfig.port, 
-             3003,
-            () => {
-            console.log(`Server running on port 3003 from server.js`);
-            // ${config.appConfig.port}
-        });
-    } catch (error) {
-        console.error('Error starting the server:', error);
-        process.exit(1);
-    }
-}
+// Connect to the database
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('MongoDB connected...') 
+  })
+  .catch(err => {
+    console.error(err)
+  });
 
+app.get("/", (req, res) =>  {
+  res.send("Sí, quédate tranquila, parece que está funcionando... por ahora");
+});
 
-module.exports = { initApp };
+app.use("/api", router);
+
+app.listen(PORT, () => console.log(`Backend listening on port ${PORT} from Server.js file`));
