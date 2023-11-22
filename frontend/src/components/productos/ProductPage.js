@@ -7,7 +7,7 @@ const ProductPage = () => {
 
   // Verificar si productDetails existe antes de desestructurarlo
   if (!productDetails) {
-    return <div>Producto no encontrado</div>;
+    return <div>Datos no facilitados por el fabricante</div>;
   }
 
   const { nombre, categoria, precio, imagen, alt } = productDetails;

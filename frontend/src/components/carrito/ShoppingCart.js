@@ -112,7 +112,7 @@ export const ShoppingCart = () => {
       application_context: {
         brand_name: 'cosas', 
         user_action: 'PAY_NOW',
-        shipping_preference: 'NO_SHIPPING', // Si no estás enviando productos físicos
+        shipping_preference: 'NO_SHIPPING',
       },
       payer: {
         payer_id: 'usuario_de_prueba_id', // ID del usuario de prueba de PayPal
