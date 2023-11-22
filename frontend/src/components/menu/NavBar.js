@@ -49,9 +49,9 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/consejos" className="custom-link">
               Consejos
             </Nav.Link>
-            <Nav.Link as={Link} to="/login" className="custom-link">
+            {/* <Nav.Link as={Link} to="/login" className="custom-link">
               Registrarse
-            </Nav.Link>
+            </Nav.Link> */}
                             
             <Nav.Link as={Link} to="/crud">Usuarios</Nav.Link>
             

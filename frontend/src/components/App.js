@@ -6,7 +6,7 @@ import Home from '../components/home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ShoppingCartProvider } from '../context/ShoppingCartContext';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
-import LoginForm from './login/LoginForm';
+// import LoginForm from './login/LoginForm';
 import Nosotros from './nosotros/Nosotros';
 import SearchPage from '../components/menu/SearchPage';
 import Footer from '../components/pie/footer';
@@ -59,7 +59,7 @@ function App() {
             <Route path="/producto/:id" element={<ProductPage />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/cart" element={<ShoppingCart />} />
-            <Route path="/login" element={<LoginForm />} />
+            {/* <Route path="/login" element={<LoginForm />} /> */}
             <Route path="/search" element={<SearchPage />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/contacto" element={<Contacto/>} />
