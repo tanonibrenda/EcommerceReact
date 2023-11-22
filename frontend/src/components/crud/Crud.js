@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import List from './List'; 
 import axios from 'axios';
 import { baseURL } from '../utils/constant';
-// import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function Crud() {
@@ -37,6 +36,7 @@ function Crud() {
 
   const updateData = (id, newData) => {
     // Actualiza el estado local con los nuevos datos
+    //de alguna manera, estuve los últimos 10 días trabajando casi exclusivamente en el update y no funciona muy bien.
     setNameInput(newData.name);
     setEmailInput(newData.email);
     setUpdateId(id);

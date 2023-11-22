@@ -6,8 +6,7 @@ function Contacto() {
   const [message, setMessage] = useState("");
 
   const handleEnviarClick = () => {
-    // Aquí podrías enviar la información a un servidor para procesar el correo electrónico
-    // En este ejemplo, simplemente imprimimos los datos en la consola
+   
     console.log("Email:", email);
     console.log("Teléfono:", phone);
     console.log("Mensaje:", message);

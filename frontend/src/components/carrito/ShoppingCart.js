@@ -20,7 +20,7 @@ export const ShoppingCart = () => {
     return acc + curr.quantity * curr.precio;
   }, 0);
 
-  // Usa la variable de entorno REACT_APP_PAYPAL_CLIENT_ID
+  
   const paypalClientId = process.env.REACT_APP_PAYPAL_CLIENT_ID;
 
   return (
@@ -95,7 +95,7 @@ export const ShoppingCart = () => {
                           </a>
                         </div>
                       </div>
-                      {/* Agregar el componente de botón de pago de PayPal */}
+                      
                       <PayPalButtons
   createOrder={(data, actions) => {
     console.log("Creating order:", data);
@@ -115,8 +115,8 @@ export const ShoppingCart = () => {
         shipping_preference: 'NO_SHIPPING',
       },
       payer: {
-        payer_id: 'usuario_de_prueba_id', // ID del usuario de prueba de PayPal
-        email_address: 'usuario_de_prueba@dominio.com', // Correo electrónico del usuario de prueba de PayPal
+        payer_id: 'usuario_de_prueba_id', 
+        email_address: 'usuario_de_prueba@dominio.com', 
       },
       payee: {
         email_address: 'mailVendedorPrueba@mail.com', 

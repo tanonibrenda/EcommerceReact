@@ -1,6 +1,6 @@
 # EcommerceReact
 
-Proyecto de final de curso 
+Proyecto de final de curso 😄
 
 ## Tabla de Contenidos
 
@@ -35,23 +35,21 @@ Para usar este proyecto, sigue los siguientes pasos:
 5. Para acceder al back end, debes tener NodeJS y MongoDB instalados en tu computadora. Ingresa a la carpeta backend
 6. En la terminal, instalar las dependencias con npm install
 7. Iniciar el server con nodemon
-8. Conectate a MongoDB Compas
-9. Crea una base de datos llamada proyectoIncluyeme
-10. Importa la colección products desde el archivo JSON que se encuentra en la raíz del directorio
-?11. Crear una cuenta gratuita en Heroku y configurar la aplicación
-?12. Despliega la app en Heroku
+8. Conectate a MongoDB
+9. Crea una base de datos llamada CRUD_DB 
 
 ## Características
 La siguiente lista detalla algunas de las características implementadas en este proyecto:
 - Paginación de productos
-- Buscador de productos
-- Agregado al carrito de compras
-- Autenticación de usuarios
-- Ordenes de compra
-- Notificaciones push
+- Buscador de productos (con Api interna)
+- Agregado al carrito de compras (con Api Interna)
+- Ordenes de compra (desactive la Api de PayPal al no lograr que funcione sin agregar datos personales sensibles)
 - Implementación de Bootstrap para diseño responsive
 - Implementación de Axios para realizar peticiones HTTP
 - Implementación de Babel para transpilar el código JavaScript moderno a versiones anteriores
+- Para Api´s externas utilicé spoonacular para acceder a más recetas de cocina. Y a formsumit, que es una api para enviar mails desde formulario de contacto sin escribir un código interno específico.
+- Hay un CRUD de productos a un archivo productos.json en el frontend, creado para la primera parte del proyecto que no quise dejar. Y un CRUD con mongodb para los usuarios. Es "sensilla" (para no usar otros adjetivos menos favorables).
+- Comentarios de más, algunas escritos es momentos de desesperación. No los borré para no olvidar el estado de demencia que al que puedo llegar.
 
 ##Contribución
 Si quieres contribuir a este proyecto, puedes hacerlo de varias maneras:

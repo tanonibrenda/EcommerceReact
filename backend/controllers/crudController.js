@@ -31,7 +31,7 @@ async function saveCrud(req, res) {
 async function getCrud(req, res){
     const crud = await CRUDModel.find()
     res.send(crud)
-    // res.send("read de crudController ")
+    
 }
 
 //UPDATE

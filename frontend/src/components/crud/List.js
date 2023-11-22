@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import { baseURL } from '../utils/constant';
 import axios from 'axios'
 
-
-
-
 const List = ({ id, crud, updateMode, setUpdateUI }) => {
   const [newName, setNewName] = useState(crud?.name || '');
   const [newEmail, setNewEmail] = useState(crud?.email || '');
@@ -15,7 +12,6 @@ const List = ({ id, crud, updateMode, setUpdateUI }) => {
   const handleUpdateClick = () => {
     setIsEditing(!isEditing);
 
-    // Si estás editando y haces clic en "Update", actualiza los datos
     if (isEditing) {
       updateMode(id, { name: newName, email: newEmail });
     }

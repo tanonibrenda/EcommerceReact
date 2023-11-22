@@ -1,5 +1,4 @@
 import React from "react";
-// import  Recetas  from "./Recetas";
 import  Recetas  from "./Recetas";
 import  Limpieza  from "./Limpieza";
 
@@ -22,7 +21,7 @@ const Consejos = () => {
     </section>
     <section className="d-flex">
       <div className="w-100 h-100"> 
-        {/* <iframe src="../partials/auriculares.html" className="w-100 h-100"></iframe> */}
+        
     </div>
     </section>
 </div>

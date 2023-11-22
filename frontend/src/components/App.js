@@ -1,12 +1,10 @@
 // App.js
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/menu/NavBar';
 import Home from '../components/home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ShoppingCartProvider } from '../context/ShoppingCartContext';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
-// import LoginForm from './login/LoginForm';
 import Nosotros from './nosotros/Nosotros';
 import SearchPage from '../components/menu/SearchPage';
 import Footer from '../components/pie/footer';
@@ -14,22 +12,9 @@ import { ShoppingCart } from '../components/carrito/ShoppingCart';
 import  Productos  from '../components/productos/Productos';
 import ProductPage from '../components/productos/ProductPage';
 import Contacto from './contacto/Contacto';
-
-import Usuarios from '../components/user/Usuario'; 
-
-import  CrearUsuario from '../components/Admin/cruds/usuarios/crearUsuario'
-
-import Admin from '../components/Admin/services/admin';
-
 import Crud from '../components/crud/Crud'
-
-
-
 import Consejos from '../components/consejos/Consejos';
 import Limpieza from '../components/consejos/Limpieza';
-
-// import CarouselWithProducts from "../components/item/CarouselWithProducts";
-
 import './App.css';
 
 
@@ -59,18 +44,10 @@ function App() {
             <Route path="/producto/:id" element={<ProductPage />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/cart" element={<ShoppingCart />} />
-            {/* <Route path="/login" element={<LoginForm />} /> */}
             <Route path="/search" element={<SearchPage />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/contacto" element={<Contacto/>} />
-            <Route path="/usuarios" component={Usuarios} />
-            <Route path="/crud" element={<Crud />} />
-            
-            
-            <Route path='/admin/crearUsuario' element={<CrearUsuario />} />
-            
-            <Route path='/admin/*' element={<Admin />} />
-
+            <Route path="/crud" element={<Crud />} />            
             <Route path="/consejos" element={<Consejos />} />
             <Route path="/limpieza" element={<Limpieza />} />
           </Routes>

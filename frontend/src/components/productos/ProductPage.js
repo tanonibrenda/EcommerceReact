@@ -5,9 +5,10 @@ const ProductPage = () => {
   const location = useLocation();
   const productDetails = location.state;
 
-  // Verificar si productDetails existe antes de desestructurarlo
+  
   if (!productDetails) {
     return <div>Datos no facilitados por el fabricante</div>;
+    //no llegué a hacer una nueva base de datos de mongodb para los productos, y agregar más información
   }
 
   const { nombre, categoria, precio, imagen, alt } = productDetails;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';  // Agrega 'useContext'
+import React, { useState, useContext } from 'react';  
 import { useLocation } from 'react-router-dom';
 import { CartContext } from '../../context/ShoppingCartContext'
 
@@ -24,23 +24,23 @@ function SearchPage() {
       { id: producto.id, nombre: producto.nombre, precio: producto.precio, quantity: 1 },
     ]);
   
-    // Aquí puedes implementar la lógica para realizar la compra
+    
     console.log(`Compraste ${producto.nombre}`);
   }
 
-  // Agrega una función para manejar la acción de agregar otro
+  
   function handleAgregarOtro(producto) {
-    // Aquí puedes implementar la lógica para agregar otro producto al carrito
+    
     console.log(`Agregaste otro ${producto.nombre} al carrito`);
   }
 
-  // Agrega una función para manejar la acción de quitar
+  
   function handleQuitar(producto) {
-    // Aquí puedes implementar la lógica para quitar un producto del carrito
+   
     console.log(`Quitaste ${producto.nombre} del carrito`);
   }
 
-  // Puedes usar la información del carrito aquí si es necesario
+ 
   console.log('Carrito:', cart);
 
   return (

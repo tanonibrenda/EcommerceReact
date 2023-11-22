@@ -18,7 +18,7 @@ const NavBar = () => {
     try {
       const data = await indexApi.searchProducts(searchTerm);
 
-      // Navegar a la página de búsqueda con los resultados
+      // para api interna y buscar datos dentro de la pagina web
       navigate('/search', { state: { searchResults: data } });
     } catch (error) {
       console.error('Error al realizar la búsqueda:', error);
@@ -49,12 +49,8 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/consejos" className="custom-link">
               Consejos
             </Nav.Link>
-            {/* <Nav.Link as={Link} to="/login" className="custom-link">
-              Registrarse
-            </Nav.Link> */}
-                            
+                                       
             <Nav.Link as={Link} to="/crud">Usuarios</Nav.Link>
-            
             <Nav.Link as={Link} to="/contacto" className="custom-link">
               Contacto
             </Nav.Link>

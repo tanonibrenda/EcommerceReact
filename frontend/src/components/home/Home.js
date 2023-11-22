@@ -43,7 +43,7 @@ const Home = () => {
             NUESTROS PRODUCTOS
           </h2>
         </div>
-        {/* Renderiza directamente el carrusel sin <Routes> */}
+       
         <CarouselWithProducts />
       </div>
     </div>

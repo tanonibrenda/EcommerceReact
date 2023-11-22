@@ -1,14 +1,13 @@
 // Footer.js
 import React from 'react';
 import './footer.css'
-// import Contacto from '../contacto/Contacto'
 import {  Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer>
-     {/* style={{ backgroundColor: 'rbg(113, 171, 214)', color: 'black' }}> */}
+    
       <section className="alPie">
         <div className="alPieContainer" style={{ width: '90%', marginLeft: '5%' }}>
           <div className="tituloFooter">
@@ -47,7 +46,7 @@ function Footer() {
                                 <p>Horarios</p>
                                 <p>Sucursales</p>
                                 <Nav.Link href="/contacto" variant="link">Contacto</Nav.Link>
-                                {/* <p><a href='/contacto'>Contacto</a></p> */}
+                               
         
                             </div>
                             
@@ -65,7 +64,7 @@ function Footer() {
                                 </i></p>
                                 <p><i className="fab fa-instagram" style={{margin: '2px'}}><a href="https://www.instagram.com/">
                                 <img src='../images/logos/icons8-instagram-16.png' alt='instagram'></img></a>  </i></p>
-                                <p><i className="fab fa-twitter" style={{margin: '2px'}}><a href='https://github.com/tanonibrenda/tp.git'>
+                                <p><i className="fab fa-twitter" style={{margin: '2px'}}><a href='https://github.com/tanonibrenda/EcommerceReact.git'>
                                 <img src='../images/logos/icons8-github-16.png' alt='github'></img></a>
                                   </i></p>
         
